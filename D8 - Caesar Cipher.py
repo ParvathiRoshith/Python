@@ -15,3 +15,32 @@ a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
               88                                             
               88           
 ''')
+import string
+alphabet=list(string.ascii_lowercase)
+symbol=list(string.punctuation)
+
+direction=input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+#text=input("Type your message:\n").lower()
+#shift=int(input("Type the shift number:\n"))
+
+def encrypt(msg,num):
+    word=''
+    for letter in msg:
+        if letter==' ':
+            word+=' '
+        elif letter in symbol:
+            word+=letter
+        else:
+            position=alphabet.index(letter)+num
+            position=position%26
+            word+=alphabet[position]
+    print("Here's the encoded result:",word)
+
+if direction=='encode':
+    text=input("Type your message:\n").lower()
+    shift=int(input("Type the shift number:\n"))
+    encrypt(msg=text,num=shift)
+elif direction == 'decode':
+    print('done')
+else:
+    print('Invalid Input')

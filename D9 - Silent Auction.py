@@ -17,7 +17,6 @@ print(logo)
 print("Welcome to the secret auction program!")
 
 dict={}
-
 new='yes'
 while new=='yes':
   name=input("What is your name?: ")
@@ -29,5 +28,17 @@ while new=='yes':
   if new=='no':
     amount=list(dict.values())
     highest=max(amount)
-    winner=list(dict.keys())[list(dict.values()).index(highest)]
-print(f"The winner is {winner} who bid with ${highest}.")
+    winner=list(dict.keys())[amount.index(highest)]
+print(f"The winner is {winner} with a bid of ${highest}.")
+
+'''
+def highest(bidding_record):
+    highes_bid=0
+    winner=''
+    for bidder in bidding_record:
+        amount=bidding_record[bidder]
+        if amount>higest_bid:
+            highest_bid=amount
+            winner=bidder
+    print(f"The winner is {winner} with a bid of ${highest}.")
+'''

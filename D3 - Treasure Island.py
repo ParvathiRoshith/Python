@@ -17,6 +17,25 @@ ____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
 ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
 /______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
 ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
-/______/______/______/______/______/______/______/______/______/______/[TomekK]
+/______/______/______/______/______/______/______/______/______/______/______ /
 *******************************************************************************
 ''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+road=input("You're at a cross road. Where do you want to go? Type \"left\" or \"right\" \n").lower()
+if road=='left':
+    lake=input("You came to a lake. There is an island in the middle of the lake. Type \"wait\" to wait for a boat. Type \"swim\" to swim accross. \n").lower()
+    if lake=='wait':
+        door=input("You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which color do you choose? \n").lower()
+        if door=='red':
+            print("It's a room full of fire. Game Over.")
+        elif door=='yellow':
+            print("You found the treasure! You Win!")
+        elif door=='blue':
+            print("You entered a room full of beasts. Game Over.")
+        else:
+            print("You chose a door that doesn't exists. Game Over.")
+    else:
+        print("You got attacked by an angry trout. Game Over")
+else:
+    print("You fell into a hole. Game Over")

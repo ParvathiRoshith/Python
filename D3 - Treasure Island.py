@@ -22,6 +22,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 ''')
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
+
 road=input("You're at a cross road. Where do you want to go? Type \"left\" or \"right\" \n").lower()
 if road=='left':
     lake=input("You came to a lake. There is an island in the middle of the lake. Type \"wait\" to wait for a boat. Type \"swim\" to swim accross. \n").lower()
@@ -35,7 +36,11 @@ if road=='left':
             print("You entered a room full of beasts. Game Over.")
         else:
             print("You chose a door that doesn't exists. Game Over.")
-    else:
+    elif lake=='swim':
         print("You got attacked by an angry trout. Game Over")
-else:
+    else:
+        print('No such option available. Game Over.')
+elif road=='right':
     print("You fell into a hole. Game Over")
+else:
+    print('You chose a road that doesn\'t exists. Game Over.')

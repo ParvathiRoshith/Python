@@ -1,3 +1,3 @@
-# python100days
+# python
 
 This is a coding practice

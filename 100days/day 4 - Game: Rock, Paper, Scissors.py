@@ -1,3 +1,10 @@
+# Heads or Tails
+coin=['Head','Tail']
+import random
+output=random.choice(coin)
+print(output)
+
+# Game
 rock=print("""
     _______
 ---'   ____)

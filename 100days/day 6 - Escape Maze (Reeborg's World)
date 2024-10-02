@@ -24,9 +24,8 @@ move()
 turn_right()
 move()
 
-#Hurdle Challenge
+#Hurdle Challenge 1
 def jump():
-    move()
     turn_left()
     move()
     turn_right()
@@ -36,15 +35,47 @@ def jump():
     turn_left()
 
 for i in range(6):
+    move()
     jump()
 
-#Hurdle 2
+#Hurdle Challenge 2
 while at_goal()!=True:  #or while not at_goal():
     jump()
 
-#Hurdle 3
+#Hurdle Challenge 3
 while at_goal()!=True:
     if wall_in_front()==True:
         jump()
     else:
         move()
+
+#Hurdle Challenge 4
+def bounce():
+    turn_left()
+    while wall_on_right():
+        move()
+    turn_right()
+    move()
+    turn_right()
+    while front_is_clear():
+        move()
+    turn_left()
+
+while at_goal()!=True:
+    if wall_in_front()==True:
+        bounce()
+    else:
+        move()
+
+#Final Project - MAZE
+while front_is_clear():
+    move()
+turn_left()
+while at_goal!=True:
+    if right_is_clear():
+        turn_right()
+        move()
+    elif wall_on_right() and front_is_clear():
+        move()
+    else:
+        turn_left()

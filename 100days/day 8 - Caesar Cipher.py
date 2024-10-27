@@ -33,7 +33,7 @@ def encrypt(msg,num):
             word+=letter
         else:
             position=alphabet.index(letter)+num
-            position=position%26
+            position=position%26                 #modulo %26 is to make the alphabet circular
             word+=alphabet[position]
     print("Here's the encoded result:",word)
 

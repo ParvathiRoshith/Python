@@ -26,8 +26,51 @@ if 1<=x<=100:
     print(x)
 else:
     print("Out of range")
-'''
+
 #Print value in english of a digit - Recursion also can be used
 x=eval(input("Enter a number between 0-9 "))
 digits_in_words={0:"Zero", 1:"One", 2:"two", 3:"Three", 4:"Four", 5:"Five", 6:"Six", 7:"Seven", 8:"Eight", 9:"Nine"}
 print(digits_in_words[x])
+
+#print character present in string index wise
+for position,value in enumerate('Hello World!'):
+    print(position,value)
+
+#print 'hello' 10 times using for loop
+for i in range(10):
+    print("Hello")
+
+#print odd numbers btwn 0-20
+for i in range(21):
+    if i%2!=0:
+        print(i)
+
+#print 10 to 1 in desc order
+for i in range(10,0,-1):
+    print(i)
+
+#print sum of numbers inside the list
+l=[1,2,3,4,5]
+print(sum(l))
+
+#print numbers using while loop
+num=0
+while num<=10:
+    print(num)
+    num+=1
+
+#print sum of 1st n numbers
+n=eval(input("Enter a max number: "))
+sum=0
+num=1
+while num<=n:
+    sum+=num
+    num=num+1
+print(f"The sum of 1 to {n} is {sum}")
+
+#input names untill "Durga"
+name=""
+while name!="Durga":
+    name=input("Enter a name: ")
+    print(name)
+'''

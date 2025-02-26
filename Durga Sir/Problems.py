@@ -73,4 +73,18 @@ name=""
 while name!="Durga":
     name=input("Enter a name: ")
     print(name)
+
+#Nested Loop
+#Form a right angled triangle with *
+for i in range(1,6):
+    for j in range(1,i+1):
+        print('*',end=' ')
+    print()                  #or print(end='\n') meaning : start a newline by default
+
+for i in range(1,6):
+    print("* " * i)
+
+for i in range(1,6):
+    print(' '*(6-i),end='')
+    print('* ' * i)
 '''

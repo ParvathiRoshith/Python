@@ -87,8 +87,55 @@ for i in range(1,6):
 for i in range(1,6):
     print(' '*(6-i),end='')
     print('* ' * i)
-'''
+
+#print +ve and -ve index
 word=input("Enter a name: ")
 for position,letter in enumerate(word):
     neg=position - len(word)
     print(position, letter, neg)
+
+#reversing letter
+word="durga"
+print(word[::-1])  #or below use one
+print(''.join(reversed(word))) 
+
+#removing space from begining and ending
+word=" TCR BLR "
+no_space_ends=word.strip()
+print(no_space_ends)
+
+#find first postion of a letter, count or occurance of a letter
+name="Parvathi"
+print(name.find('h'))
+print(name.find('a',2))
+print(name.count('a'))
+
+#replacing a word with another
+string='Python is easy'
+new_string=string.replace('easy', 'very easy')
+print(new_string)
+print(id(string))
+print(id(new_string))
+
+#splitting a string and joining back
+string='I had an apple yesterday.'
+list=string.split()
+print(list)
+back_to_string=' '.join(list)
+print(back_to_string)
+
+sentence="learning Python is very Easy."
+print(sentence.lower())
+print(sentence.upper())
+print(sentence.capitalize())
+print(sentence.title())
+
+print(sentence.startswith('learning'))
+print(sentence.endswith('Easy')) #False as the sentence ends with 'Easy.' or '.'
+'''
+#reverse order of words in a sentence (not reversing each word)
+sentence="Durga Sir teaches Python"
+list=sentence.split()
+reversed_list=list[::-1]
+reversed_sentence=' '.join(reversed_list)
+print(reversed_sentence)  #output is different from 'print(sentence[::-1])' output

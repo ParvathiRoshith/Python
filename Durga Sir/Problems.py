@@ -132,10 +132,18 @@ print(sentence.title())
 
 print(sentence.startswith('learning'))
 print(sentence.endswith('Easy')) #False as the sentence ends with 'Easy.' or '.'
-'''
-#reverse order of words in a sentence (not reversing each word)
+
+#reversing
 sentence="Durga Sir teaches Python"
+print(sentence[::-1])  #1st type of reverse- reversing everything
 list=sentence.split()
 reversed_list=list[::-1]
 reversed_sentence=' '.join(reversed_list)
-print(reversed_sentence)  #output is different from 'print(sentence[::-1])' output
+print(reversed_sentence)  #2nd type of reverse- reversing sentence keeping words as it is
+new_list=[]
+for word in list:
+    reversed_word=word[::-1]
+    new_list.append(reversed_word)
+new_sentence=' '.join(new_list)
+print(new_sentence)    #3rd type of reverse- reversing each word keeping sentence as it is
+'''

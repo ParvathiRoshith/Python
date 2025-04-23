@@ -182,4 +182,34 @@ for i in input:
     else:
         output=output+previous*(int(i)-1)
 print(output)
+
+import string
+letter=string.ascii_lowercase
+letter=list(letter)
+word='a4k3b2'
+new_word=''
+for i in word:
+    if i.isalpha()==True:
+        new_word=new_word+i
+        previous=i
+    else:
+        new_word=new_word+letter[letter.index(previous)+int(i)]
+print(new_word)
+
+#remove duplicate
+input=input("Enter a String: ")
+result=''
+for i in input:
+    if i not in result:
+        result=result+i
+print(result)
 '''
+#number of occurance of each letter
+word='ABCABCABBCD'
+dict={}
+for i in word:
+    if i in dict.keys():
+        dict[i]=dict[i]+1
+    else:
+        dict[i]=1
+print(dict)

@@ -146,4 +146,40 @@ for word in list:
     new_list.append(reversed_word)
 new_sentence=' '.join(new_list)
 print(new_sentence)    #3rd type of reverse- reversing each word keeping sentence as it is
+
+#merge 2 strings by having letters alternatively
+s1="ravi"
+s2="reja"
+i,j=0,0
+result=''
+while i<len(s1) or j<len(s2):
+    if i<len(s1):
+        result=result+s1[i]
+        i=i+1
+    if j<len(s2):
+        result=result+s2[j]
+        j=j+1
+print(result)
+
+input='B4A1D3'
+x1=''
+x2=''
+for i in input:
+    if i.isalpha():
+        x1=x1+i
+    if i.isdigit():
+        x2=x2+i
+#print(x1+x2)
+final=sorted(x1)+sorted(x2)
+print(''.join(final))
+
+input='a4b3c2'  ###expected output=aaaabbbcc
+output=''
+for i in input:
+    if i.isalpha():
+        output=output+i
+        previous=i
+    else:
+        output=output+previous*(int(i)-1)
+print(output)
 '''

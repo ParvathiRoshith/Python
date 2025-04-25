@@ -203,7 +203,7 @@ for i in input:
     if i not in result:
         result=result+i
 print(result)
-'''
+
 #number of occurance of each letter
 word='ABCABCABBCD'
 dict={}
@@ -213,3 +213,4 @@ for i in word:
     else:
         dict[i]=1
 print(dict)
+'''

@@ -18,3 +18,24 @@ print(f'Your cards: {list(player1)}')
 
 player2=random.sample(game,2)
 print("Computer's first card:",player2[0])
+
+move=input("Type 'y' to get another card, type 'n' to pass: ")
+if move=='y':
+    player1=player1+random.sample(game,1)
+    '''
+elif move=='n':
+    player1=player1
+else:
+    print("You entered an invalid")'''
+
+print('Your final hand: ',player1)
+total1=sum(player1)
+print('Computer\'s final hand: ',player2)
+total2=sum(player2)
+
+if total1>total2 and total1<=21:
+    print('You Won')
+elif total1==total2:
+    print('Draw')
+else:
+    print('You Loss')

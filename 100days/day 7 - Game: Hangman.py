@@ -81,8 +81,9 @@ for position in range(len(chosen_word)):
     if letter==guess:
         display[position]=letter
 #Exercise-3
-print(display)'''
+print(display)
 
+'''
 #STEP 3
 end_of_game=False
 lives=len(hangmanpics)

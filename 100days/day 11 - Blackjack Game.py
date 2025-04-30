@@ -50,7 +50,8 @@ def calculate_score(deck):
     if len(deck)==2 and sum(deck)==21:
         return 0
     if 11 in deck and sum(deck)>21:
-        deck.replace(11,1)
+        deck.remove(11)
+        deck.append(1)
     return sum(deck)
 def compare_score(u_score,c_score):
     if u_score==c_score:
@@ -63,6 +64,7 @@ def compare_score(u_score,c_score):
         return "Not accepted"
 
 def play_game():
+    print(logo)
     player1=[]  #user
     player2=[]  #computer
     game_end=False
@@ -78,24 +80,23 @@ def play_game():
         print("Computer's first card: ",player2[0])
         user_score=calculate_score(player1)
         computer_score=calculate_score(player2)
+        print(user_score,computer_score)
         if user_score==0 or computer_score==0 or user_score>21:
             game_end=True
         else:
             move=input("Type 'y' to get another card, type 'n' to pass: ")
             if move=='y':
                 player1.append(pick_card())
-                print('Your final hand: ',player1)
+                #game_end=True
             elif move=='n':
                 game_end=True
-            else:
-                print("Invalid input")
-                break
 
     while computer_score!=0 or computer_score<17:
         player2.append(pick_card())
-        print('Computer\'s final hand: ',player2)
         computer_score=calculate_score(player2) 
-
+    
+    print('Your final hand: ',player1,user_score)
+    print('Computer\'s final hand: ',player2,computer_score)
     print(compare_score(user_score,computer_score))
 
 while input("Do you want to play a game of BlackJack? Type 'y' or 'n': ")=='y':

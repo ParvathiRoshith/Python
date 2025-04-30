@@ -9,6 +9,7 @@ logo='''
       |  \/ K|                            _/ |                
       `------'                           |__/                 
 '''
+'''
 print(logo)
 import random
 game=[11,2,3,4,5,6,7,8,9,10,10,10,10]
@@ -39,3 +40,64 @@ while gaming==True:
         gaming=True
     else:
         gaming=False
+'''
+import random
+def pick_card():
+    deck=[11,2,3,4,5,6,7,8,9,10,10,10,10]
+    pick=random.choice(deck)
+    return pick
+def calculate_score(deck):
+    if len(deck)==2 and sum(deck)==21:
+        return 0
+    if 11 in deck and sum(deck)>21:
+        deck.replace(11,1)
+    return sum(deck)
+def compare_score(u_score,c_score):
+    if u_score==c_score:
+        return "Draw"
+    elif c_score==0 or c_score==21 or u_score>21 or u_score<c_score:
+        return "You Loss"
+    elif u_score==0 or u_score==21 or c_score>21 or u_score>c_score:
+        return "You Won"
+    else:
+        return "Not accepted"
+
+def play_game():
+    player1=[]  #user
+    player2=[]  #computer
+    game_end=False
+    user_score=-1
+    computer_score=-1
+
+    for i in range(2):
+        player1.append(pick_card())
+        player2.append(pick_card())
+
+    while game_end==False:
+        print(f'Your cards: {player1}')
+        print("Computer's first card: ",player2[0])
+        user_score=calculate_score(player1)
+        computer_score=calculate_score(player2)
+        if user_score==0 or computer_score==0 or user_score>21:
+            game_end=True
+        else:
+            move=input("Type 'y' to get another card, type 'n' to pass: ")
+            if move=='y':
+                player1.append(pick_card())
+                print('Your final hand: ',player1)
+            elif move=='n':
+                game_end=True
+            else:
+                print("Invalid input")
+                break
+
+    while computer_score!=0 or computer_score<17:
+        player2.append(pick_card())
+        print('Computer\'s final hand: ',player2)
+        computer_score=calculate_score(player2) 
+
+    print(compare_score(user_score,computer_score))
+
+while input("Do you want to play a game of BlackJack? Type 'y' or 'n': ")=='y':
+            #print('\n'*20) #clear terminal
+            play_game()

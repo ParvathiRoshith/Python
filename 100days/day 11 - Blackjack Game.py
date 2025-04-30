@@ -80,23 +80,21 @@ def play_game():
         print("Computer's first card: ",player2[0])
         user_score=calculate_score(player1)
         computer_score=calculate_score(player2)
-        print(user_score,computer_score)
         if user_score==0 or computer_score==0 or user_score>21:
             game_end=True
         else:
             move=input("Type 'y' to get another card, type 'n' to pass: ")
             if move=='y':
                 player1.append(pick_card())
-                #game_end=True
             elif move=='n':
                 game_end=True
 
-    while computer_score!=0 or computer_score<17:
+    while computer_score!=0 and computer_score<17:
         player2.append(pick_card())
         computer_score=calculate_score(player2) 
     
-    print('Your final hand: ',player1,user_score)
-    print('Computer\'s final hand: ',player2,computer_score)
+    print('Your final hand: ',player1)
+    print('Computer\'s final hand: ',player2)
     print(compare_score(user_score,computer_score))
 
 while input("Do you want to play a game of BlackJack? Type 'y' or 'n': ")=='y':

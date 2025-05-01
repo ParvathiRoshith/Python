@@ -58,10 +58,18 @@ def calculate_score(deck):
 def compare_score(u_score,c_score):
     if u_score==c_score:
         return "Draw"
-    elif c_score==0 or c_score==21 or u_score>21 or u_score<c_score:
+    elif c_score==0 :
         return "You Loss"
-    elif u_score==0 or u_score==21 or c_score>21 or u_score>c_score:
+    elif u_score==0 :
         return "You Won"
+    elif u_score>21 :
+        return "You Loss"
+    elif c_score>21 :
+        return "You Won"
+    elif u_score>c_score:
+        return "You Won"
+    elif u_score<c_score:
+        return "You Loss"
     else:
         return "Not accepted"
 
@@ -100,5 +108,5 @@ def play_game():
     print(compare_score(user_score,computer_score))
 
 while input("Do you want to play a game of BlackJack? Type 'y' or 'n': ")=='y':
-            #print('\n'*20) #clear terminal
+            print('\n'*20) #clear terminal
             play_game()

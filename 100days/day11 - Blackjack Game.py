@@ -68,10 +68,8 @@ def compare_score(u_score,c_score):
         return "You Won"
     elif u_score>c_score:
         return "You Won"
-    elif u_score<c_score:
-        return "You Loss"
     else:
-        return "Not accepted"
+        return "You Loss"
 
 def play_game():
     print(logo)
@@ -96,7 +94,7 @@ def play_game():
             move=input("Type 'y' to get another card, type 'n' to pass: ")
             if move=='y':
                 player1.append(pick_card())
-            elif move=='n':
+            else:                   #move=='n'or any letter no next pick
                 game_end=True
 
     while computer_score!=0 and computer_score<17:

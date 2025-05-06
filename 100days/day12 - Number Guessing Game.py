@@ -12,15 +12,22 @@ elif difficulty == 'hard':
 else:
     print("Invalid")
 
-game_on=True
-while game_on==True:
+game_end=False
+while game_end==False:
     print(f"You have {lives} attempts remaining to guess the number.")
     guess=int(input("Make a guess: "))
     if guess==number:
         print(f"You got it! The answer was {number}")
-        break
+        game_end=True
     elif guess>number:
-        print("Too high. \nGuess again.")
+        print("Too high.")
     elif guess<number:
-        print("Too low. \nGuess again.")
+        print("Too low.")
+    lives=lives-1
+    if lives==0:
+        print("You've run out of guesses, you lose.") 
+        game_end=True
+    else:
+        print("Guess again.")
+
 

@@ -340,23 +340,31 @@ def compare_result(guess,a_followers,b_followers):
     else:
         return "incorrect"
 
-
 print(logo)
-a=random_account()
-print('Compare A:',format_data(a))
-print(vs_logo)
 b=random_account()
-print('Against B:',format_data(b))
-guess=input("Who has more followers? Type 'A' or 'B': ").lower()
-a_followers=a['follower_count']
-b_followers=b['follower_count']
-
-print('\n'*20)  #clear
-print(logo)
-check_answer=compare_result(guess,a_followers,b_followers)
+game_is_on=True
 score=0
-if check_answer=="correct":
-    score=score+1
-    print(f"You're right! Current score: {score}")
-else:
-    print(f"Sorry, that's wrong. Final score: {score}")
+
+while game_is_on==True:
+    a=b
+    b=random_account()
+    if a==b:    # if both value is same
+        b=random_account()
+
+    print('Compare A:',format_data(a))
+    print(vs_logo)
+    print('Against B:',format_data(b))
+
+    guess=input("Who has more followers? Type 'A' or 'B': ").lower()
+    a_followers=a['follower_count']
+    b_followers=b['follower_count']
+
+    print('\n'*20)  #clear
+    print(logo)
+    check_answer=compare_result(guess,a_followers,b_followers)
+    if check_answer=="correct":
+        score=score+1
+        print(f"You're right! Current score: {score}")
+    else:
+        print(f"Sorry, that's wrong. Final score: {score}")
+        game_is_on=False

@@ -348,7 +348,7 @@ score=0
 while game_is_on==True:
     a=b
     b=random_account()
-    if a==b:    # if both value is same
+    if a==b:    # if both value is same comparison not possible hence 
         b=random_account()
 
     print('Compare A:',format_data(a))

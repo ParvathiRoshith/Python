@@ -314,7 +314,7 @@ logo = """
 /_____/\____/|__/|__/\___/_/     
 """
 
-logo_vs = """
+vs_logo = """
  _    __    
 | |  / /____
 | | / / ___/
@@ -325,20 +325,38 @@ logo_vs = """
 #print(logo)
 import random
 
-def random_choice():
-    player=random.choice(data)
-    name=player['name']
-    followers=player['follower_count']
-    description=player['description']
-    country=player['country']
+def random_account():
+    return random.choice(data)
+
+def format_data(account):
+    name=account['name']
+    description=account['description']
+    country=account['country']
     return f"{name}, {description}, from {country}"
 
-a=random_choice()
-b=random_choice()
+def compare_result(guess,a_followers,b_followers):
+    if (a_followers>b_followers and guess=='a') or (a_followers<b_followers and guess=='b'):
+        return "correct"
+    else:
+        return "incorrect"
+
 
 print(logo)
-print('Compare A:',a)
-print(logo_vs)
-print('Against B:',b)
+a=random_account()
+print('Compare A:',format_data(a))
+print(vs_logo)
+b=random_account()
+print('Against B:',format_data(b))
+guess=input("Who has more followers? Type 'A' or 'B': ").lower()
+a_followers=a['follower_count']
+b_followers=b['follower_count']
 
-
+print('\n'*20)  #clear
+print(logo)
+check_answer=compare_result(guess,a_followers,b_followers)
+score=0
+if check_answer=="correct":
+    score=score+1
+    print(f"You're right! Current score: {score}")
+else:
+    print(f"Sorry, that's wrong. Final score: {score}")

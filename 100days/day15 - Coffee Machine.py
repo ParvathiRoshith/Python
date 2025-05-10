@@ -26,13 +26,20 @@ MENU = {
 
 profit = 0
 resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
+    "water": 250,#300,
+    "milk": 100,#200,
+    "coffee": 100,#100,
 }
 
 def check_resource():
-    if resources['water']>=MENU[prompt]["ingredients"]["water"]
+    if resources['water']<MENU[prompt]["ingredients"]["water"]:
+        print("Sorry there is not enough water.")
+    elif resources['milk']<MENU[prompt]["ingredients"]["milk"]:
+        print("Sorry there is not enough milk.")
+    elif resources['coffee']<MENU[prompt]["ingredients"]["coffee"]:
+        print("Sorry there is not enough coffee.")
+    else:
+        return "Process"
 
 coffee_machine_on=True
 while coffee_machine_on==True:
@@ -45,5 +52,12 @@ while coffee_machine_on==True:
               f"Coffee: {resources["coffee"]} \n"
               f"Money: {profit}"
               )
-    #else:
-        
+    else:
+        if check_resource()=="Process":
+            print("Please insert coins.")
+            quarters=input("How many quarters?: ")
+            dimes=input("How many dimes?: ")
+            nickles=input("How many nickles?: ")
+            pennies=input("How many pennies?: ")
+        else:
+            coffee_machine_on=False

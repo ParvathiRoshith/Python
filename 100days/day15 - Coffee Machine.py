@@ -31,14 +31,20 @@ resources = {
     "coffee": 100,
 }
 
+def check_resource(drink):
+    if drink=='espresso':
+        resources['water']>=MENU[prompt]["water"]
+
 coffee_machine_on=True
 while coffee_machine_on==True:
     prompt=input("What would you like? (espresso/latte/cappuccino): ").lower()
     if prompt=='off':
         coffee_machine_on=False
     elif prompt=='report':
-        print(f"Water: {resources["water"]}" 
+        print(f"Water: {resources["water"]} \n" 
               f"Milk: {resources["milk"]} \n" 
-              f"Coffee: {resources["coffee"]}"
+              f"Coffee: {resources["coffee"]} \n"
               f"Money: {profit}"
               )
+    #else:
+        

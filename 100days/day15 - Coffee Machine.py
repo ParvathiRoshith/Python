@@ -31,9 +31,8 @@ resources = {
     "coffee": 100,
 }
 
-def check_resource(drink):
-    if drink=='espresso':
-        resources['water']>=MENU[prompt]["water"]
+def check_resource():
+    if resources['water']>=MENU[prompt]["ingredients"]["water"]
 
 coffee_machine_on=True
 while coffee_machine_on==True:

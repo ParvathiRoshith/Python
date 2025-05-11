@@ -33,7 +33,7 @@ resources = {
 }
 
 def check_resource():
-    if resources['water']<MENU[prompt]["ingredients"]["water"]:
+    if resources['water']<MENU[prompt]["ingredients"]["water"]:         # can use for loop instead to open nested dict
         print("Sorry there is not enough water.")
     elif resources['milk']<MENU[prompt]["ingredients"]["milk"]:
         print("Sorry there is not enough milk.")
@@ -54,7 +54,7 @@ def check_amount():
         profit=profit+amount
 
 def deduct_resource():
-    resources['water'] = resources['water'] - MENU[prompt]["ingredients"]["water"]
+    resources['water'] = resources['water'] - MENU[prompt]["ingredients"]["water"]              #use for loop insted
     resources['milk'] = resources['milk'] - MENU[prompt]["ingredients"]["milk"]
     resources['coffee'] = resources['coffee'] - MENU[prompt]["ingredients"]["coffee"]
 

@@ -18,5 +18,10 @@ for i in range(15):
     timmy_the_turtle.forward(10)
     timmy_the_turtle.pendown()
 
+#draw triangle, square, pentagon, hexagone, heptagone, octagone, nonagon and decagon
+timmy_the_turtle.forward(100)
+timmy_the_turtle.right(120)
+
+
 screen=Screen()
 screen.exitonclick()

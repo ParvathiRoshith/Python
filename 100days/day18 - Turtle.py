@@ -41,6 +41,31 @@ for i in range(200):
     timmy_the_turtle.forward(30)
     timmy_the_turtle.setheading(random.choice(directions))
     
+#random color for random walk
+import turtle as t
+tim = t.Turtle()
+t.colormode(255)    #range 0 to *cmode* here cmode=255
+def random_color():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    return (r,g,b)
+directions=[0, 90, 180, 270] 
+for i in range(200):
+    timmy_the_turtle.color(random_color)
+    timmy_the_turtle.forward(30)
+    timmy_the_turtle.setheading(random.choice(directions))
+
+#Spirograph
+timmy_the_turtle.speed("fastest")
+def draw_spirograph(num_of_gaps):
+    total_circles = int(360/num_of_gaps)
+    for i in range(total_circles):
+        timmy_the_turtle.color(random_color)
+        timmy_the_turtle.circle(100)
+        current_pos = timmy_the_turtle.heading()
+        timmy_the_turtle.setheading(current_pos+num_of_gaps)
+draw_spirograph(5)
 
 screen=Screen()
 screen.exitonclick()

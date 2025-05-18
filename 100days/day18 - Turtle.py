@@ -1,4 +1,4 @@
-''''''
+'''
 from turtle import Turtle, Screen
 timmy_the_turtle = Turtle()
 timmy_the_turtle.shape("turtle")
@@ -69,3 +69,9 @@ draw_spirograph(5)
 
 screen=Screen()
 screen.exitonclick()
+'''
+
+#Hirst Painting Project
+import colorgram
+colour = colorgram.extract("e9c9652e717352c112fed0d0798d82ab_t.jpeg",6)
+print(colour)

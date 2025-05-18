@@ -71,7 +71,36 @@ screen=Screen()
 screen.exitonclick()
 '''
 
-#Hirst Painting Project
+#Hirst Painting Project 1
 import colorgram
-colour = colorgram.extract("main/workspaces/Python/100days/e9c9652e717352c112fed0d0798d82ab_t.jpg",6)
-print(colour)
+colour_extract = colorgram.extract("image.jpg",30)
+colour_list=[]
+for colour in colour_extract:
+    r = colour.rgb.r
+    g = colour.rgb.g
+    b = colour.rgb.b
+    new_colour = (r,g,b)
+    colour_list.append(new_colour)
+
+#Hirst Painting Project 2
+import turtle as t
+import random as r
+tom=t.Turtle()
+tom.hideturtle()
+tom.setheading(225)  #moving starting point from middle to somewhere down
+tom.forward(300)
+tom.setheading(0)
+tom.penup()
+num_of_dots=100
+for i in range(1,num_of_dots+1):
+    tom.dot(10, r.choice(colour_list))
+    tom.forward(50)
+    if i % 10 ==0:
+        tom.setheading(90)
+        tom.forward(50)
+        tom.setheading(180)
+        tom.speed("fastest")
+        tom.forward(50*10)
+        tom.setheading(0)
+screen=t.Screen()
+screen.exitonclick()

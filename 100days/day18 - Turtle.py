@@ -73,5 +73,5 @@ screen.exitonclick()
 
 #Hirst Painting Project
 import colorgram
-colour = colorgram.extract("e9c9652e717352c112fed0d0798d82ab_t.jpeg",6)
+colour = colorgram.extract("main/workspaces/Python/100days/e9c9652e717352c112fed0d0798d82ab_t.jpg",6)
 print(colour)

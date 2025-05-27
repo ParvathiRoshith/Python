@@ -1,3 +1,4 @@
+# Etch-a-Sketch Game
 from turtle import Turtle, Screen
 tim = Turtle()
 screen = Screen()
@@ -26,5 +27,22 @@ screen.onkey(fun=move_backward,key="s")
 screen.onkey(fun=turn_left,key="a")  #anticlockwise
 screen.onkey(fun=turn_right,key="d")  #clock
 screen.onkey(fun=clear,key="c")  #clear
+
+screen.exitonclick()
+
+
+# Turtle race Game
+from turtle import Turtle, Screen
+screen = Screen()
+screen.setup(width=500,height=400)
+guess = screen.textinput(title="Make your bet",prompt="Which turtle will win the race? Enter a colour: ")
+colours=['purple','blue','green','yellow','orange','red']
+
+tim = Turtle(shape='turtle')
+tim.penup()
+tim.goto(x=-250,y=-100)
+
+for i in colours:
+    
 
 screen.exitonclick()

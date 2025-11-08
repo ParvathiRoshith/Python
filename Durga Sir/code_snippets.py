@@ -97,3 +97,8 @@ print(a, b, sep=':')
 print('hello', end=' ')   #if we want output in same line
 print('world')
 print('first num ', a, 'second num ', b)
+print(f'The number is {a}')
+print('a value is %i and b value is %d' %(a, b))            #formatted string = %i, %d - int : %f - float : %s - string
+print("Durga's number is {0}, Software's number is {1}".format(a,b))    #replacement operater{}
+
+# FLOW CONTROL

@@ -102,3 +102,26 @@ print('a value is %i and b value is %d' %(a, b))            #formatted string = 
 print("Durga's number is {0}, Software's number is {1}".format(a,b))    #replacement operater{}
 
 # FLOW CONTROL
+'''
+Conditional statements - if, if-else, if-elif, if-elif-else
+
+Iterative statements 
+    - for : execute some action for every element of a sequence
+    - while : execute some action iteratively until some condition is false
+
+Transfer statements 
+    - break : break execution within that loop
+    - continue : skip current iteration and continue next 
+    - pass
+'''
+for i in range(10):
+    if i%2==0:
+        continue
+    print(i)        #print only odd value
+
+#del keyword
+s='durga'
+del s
+#print(s)  del keyword deletes the variable hence error
+s=None
+print(s)

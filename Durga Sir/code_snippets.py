@@ -43,7 +43,7 @@ dict()/{} : mutable, not ordered, key-valuepairs (key-no duplicates, value-dupli
 '''
 #Escape charaters - \n, \t, \', \",...
 
-#OPERATIONS
+# OPERATIONS
 '''
 Arithmetic -
     + : add / string concatenation
@@ -61,3 +61,39 @@ Special operator -
     Identity operator : is, is not
     Membership operator : in, not in
 '''
+a='durga'
+b='durga'
+print(a is b)
+print(a is not b)
+print('g' in a)
+print('s' not in b)
+
+# MATH MODULE
+import math
+print(math.sqrt(16))
+print(math.pi)
+
+# INPUT AND OUTPUT STATEMENTS
+#name = input("Enter your name \n")
+#number = int(input("Enter your number: ")) 
+#a,b = [int(x) for x in input("Enter your number: ").split(',')]  #splitting a comma separated string
+print(a,b)
+
+#eval() - takes a string as an argument and evaluates it as a Python expression, returning the result of that expression
+#       - recommended to not use in untrusted input from users i.e. eval(input()) should be avoided
+number = eval("10+2*3/4")
+print(number)
+
+# Command Line Argument - Command line arguments in Python are values passed to a script when it is executed from the terminal or command prompt
+from sys import argv
+print('The num of Command Line Arguments: ',len(argv))
+print('The list of Command Line Arguments: ',argv)
+
+#output statements
+print()        #without any argument in () prints a new line
+print('hi')
+a,b = 10, 30
+print(a, b, sep=':')
+print('hello', end=' ')   #if we want output in same line
+print('world')
+print('first num ', a, 'second num ', b)

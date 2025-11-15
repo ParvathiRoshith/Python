@@ -19,11 +19,12 @@ print(id(b))
 s='durga'
 print(s[0])
 print(s[-1])
-print(s[:])
+print(s[:])  #same as s[::]
 print(s[1:3])
 print(s[1:])
 print(s[:4])
 print(s[::-1]) #reverse string
+print(s[1:4:2])  #begin:(end-1):step default=1
 
 # TYPE CASTING - convering one type value to another type
 '''
@@ -125,3 +126,18 @@ del s
 #print(s)  del keyword deletes the variable hence error
 s=None
 print(s)
+
+# STRING DATA TYPE
+
+s = ' Learning Python is very easy '
+print(s[:])           #slicing
+print(s + '.')        #Arithmetic operator: +, *
+print(s*2)
+print(s==1)           #Relational operator: for comparison
+print(len(s))
+print(s.strip())      # remove space from both ends, rstrip/lstrip
+print(s.find('Python'))   #finding 1st occurance of a word or letter in a string    #find(string,begin,end)
+print(s.index('r'))         #find/index can be used same output but if not found 'VaueError'
+print(s.rfind('r'))    #finding 1st occurance from backward direction (ve'r'y)
+print(s.count('Python'))    #count(string,begin,end)
+print(s.replace('very easy','easy'))    #replace(oldstring,newstring)

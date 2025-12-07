@@ -142,9 +142,20 @@ print(s.rfind('r'))    #finding 1st occurance from backward direction (ve'r'y)
 print(s.count('Python'))    #count(string,begin,end)
 print(s.replace('very easy','easy'))    #replace(oldstring,newstring)
 
+# EXCEPTION HANDLING - handle runtime errors
+
+
+
 # LOGGING - that stores complete data flow & exceptions info in a file
 
 import logging
 logging.basicConfig(filename='log.txt',level=logging.CRITICAL)
+logging.critical('this is a critical message')
 msg='cannot divie by zero'
 logging.exception(msg)
+
+# DEBUGGING - identifying & fixing bugs. Used to alert programmer
+
+def squareIt(x):
+    return x**x
+assert squareIt(3)==9,"The square of 3 should be 9q "

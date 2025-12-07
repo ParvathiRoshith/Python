@@ -281,7 +281,36 @@ Garbage Collection - The reference counting alone cannot handle circular referen
                      So, python has a cyclic garbage collector to handle it.
                      Garbage collector destroys useless objects.
 Memory Allocation - While creating object in Python (eg: list, dict, or custom object), Python allocates memory for it in the heap
+--
+Destructor -Just before destroying an object, Garbage Collector always calls destructor to perform clean up activities (like closing an opened file).
+The destructor method is called __del__(self) 
 '''
 import sys
 my_list = [1,2,3]
 print(sys.getrefcount(my_list))
+
+import gc
+print(gc.isenabled())
+gc.enable()
+
+class Test:
+    def __init__(self):
+        pass
+    def __del__(self):
+        print('Performing clean up activities')
+
+'''
+Passing members of one class to another class - 
+
+1). Composition - by using class name/object we can access members of one class inside another
+
+2). Inheritance - 
+'''
+
+#Composition
+class Engine:
+    a=10
+    def __init__(self):
+        self.b = 20
+    def m1(self):
+        print("Engine functionality")

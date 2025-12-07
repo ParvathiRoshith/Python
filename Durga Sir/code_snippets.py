@@ -164,11 +164,70 @@ assert squareIt(3)==9,"The square of 3 should be 9"     #assert condition,messag
 
 '''
 Class
+self variable --> default variable pointing to the currect object. Access instance variable/method
+Constructor --> __init__; will be automatically executed once at the time of object creation, initialize instance variable
+Variables 
+Method
 Object --> physical existence of class, to create object we use reference variable
 Reference Variable --> variable used to refer object; eg: c=ClassName()
-Variables
-Method
 '''
 
-class ClassName:
-    '''documentation string'''
+class Student:
+    '''This is a student class.'''
+    def __init__(self,x,y,z):
+        self.name = x
+        self.rollno = y
+        self.marks = z
+    def display(self):
+        print(f"{self.name} having {self.rollno} has scored {self.marks} marks.")
+    def method1(self):
+        del self.rollno
+
+s=Student('Durga',100,50)
+print(s.__doc__)      #documentation string of the class
+print(s.__dict__)   #dictionary/to know instance variables
+s.display()
+s.method1()
+print(s.__dict__) 
+
+s1=Student('Suraj',102,49)
+print(s1.__dict__)
+s1.marks = 46
+s1.display()
+
+'''
+Variables :
+    - Instance variable: value of variable vary object to object. For each object a separate copy will be created
+    - Static variable: value of variable do not vary object to object. For total class only 1 copy of static variable created
+    - Local variable: variable inside a method in the class. Temprorary. Created at the time of method execution & destroyes once method completes
+'''
+
+class Test:
+    a = 10              #static variable
+    def __init__(self,default_variable=999):
+        self.b = 20     #instance variable
+        self.p = default_variable
+    def method1(self):
+        c = 30          #local variable
+        print(c)
+
+t1=Test()
+print(t1.__dict__)
+print(t1.a)
+
+t2=Test()
+t2.method1()
+
+class Test:
+    a = 10
+    def __init__(self):
+        self.b = 20    
+    @classmethod
+    def method2(cls):
+        del Test.a      
+        Test.x = 10
+        cls.y = 10
+
+t3 = Test()
+t3.method2()
+print(Test.y)

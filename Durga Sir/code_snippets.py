@@ -141,3 +141,10 @@ print(s.index('r'))         #find/index can be used same output but if not found
 print(s.rfind('r'))    #finding 1st occurance from backward direction (ve'r'y)
 print(s.count('Python'))    #count(string,begin,end)
 print(s.replace('very easy','easy'))    #replace(oldstring,newstring)
+
+# LOGGING - that stores complete data flow & exceptions info in a file
+
+import logging
+logging.basicConfig(filename='log.txt',level=logging.CRITICAL)
+msg='cannot divie by zero'
+logging.exception(msg)

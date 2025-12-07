@@ -157,5 +157,6 @@ logging.exception(msg)
 # DEBUGGING - identifying & fixing bugs. Used to alert programmer
 
 def squareIt(x):
-    return x**x
-assert squareIt(3)==9,"The square of 3 should be 9q "
+    return x**x             #x*x is correct
+assert squareIt(3)==9,"The square of 3 should be 9"     #assert condition,message
+

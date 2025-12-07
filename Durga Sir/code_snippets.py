@@ -163,13 +163,14 @@ assert squareIt(3)==9,"The square of 3 should be 9"     #assert condition,messag
 # OBJECT ORIENTED PROGRAMMING SYSTEM
 
 '''
-Class
+Class [like the blue print to create something/an object]
+*******
 self variable --> default variable pointing to the currect object. Access instance variable/method
 Constructor --> __init__; will be automatically executed once at the time of object creation, initialize instance variable
 Variables 
-Method
+Method --> a funct. inside a class is called as method. We write the business logic in it.
 Object --> physical existence of class, to create object we use reference variable
-Reference Variable --> variable used to refer object; eg: c=ClassName()
+Reference Variable [like TV remote] --> variable used to refer object; eg: c=ClassName()
 '''
 
 class Student:
@@ -203,31 +204,84 @@ Variables :
 '''
 
 class Test:
-    a = 10              #static variable
+    a = 10                              #static variable
     def __init__(self,default_variable=999):
-        self.b = 20     #instance variable
+        self.b = 20                      #instance variable
         self.p = default_variable
-    def method1(self):
-        c = 30          #local variable
+    def method(self):
+        c = 30                      #local variable
         print(c)
 
 t1=Test()
 print(t1.__dict__)
 print(t1.a)
-
 t2=Test()
-t2.method1()
+t2.method()
+
+'''
+Methods:
+    - Instance method: that uses atleast one instance variable inside the method of a class
+    - Class method: that uses only class/static variables inside the method of a class
+    - Static method: that uses neither instance nor static variable inside the method
+
+We can get and set values of instance variable outside constructor using Getters and Setters Methods
+Setters and getters in Python (both explicit and @property versions) are instance methods.
+
+For every class, python virtual machine (PVM) will create internally an object called class level object.
+Represented as 'cls'.
+It holds class level data i.e. static variable.
+Only one just object will be created to hold all the static variable of that class.
+'''
 
 class Test:
     a = 10
     def __init__(self):
         self.b = 20    
-    @classmethod
-    def method2(cls):
+    @classmethod          #class method, instead of self we use cls
+    def method1(cls):
         del Test.a      
         Test.x = 10
         cls.y = 10
-
+    def method2(self):          #instance method, self is the argument
+        return self.b*2
+    def display(self):          #instance method
+        print(f"instance variable b = {self.b}")
+    @staticmethod          #static method, no need to use self/cls
+    def add(x,y):
+        return x+y
+    
 t3 = Test()
-t3.method2()
-print(Test.y)
+t3.method1()
+print(Test.y) 
+print(Test().method2())
+print(Test().add(2,3))
+
+class Employee:
+    def setName(self,name):
+        self.name = name
+    def getName(self):
+        return self.name
+    
+e=Employee()
+e.setName('Durga')
+print(e.getName())
+
+'''Inner class
+Without existing of 1 object if there's no chance of existing another typpe of object then we go for ineer classes.
+To acess method inside inner class - Outer().Inner().m1()
+'''
+
+# Reference counting & Garbage collection
+'''
+Q). How Python manages memory?
+
+ans: Python combines reference counting, garbage collection, and internal memory management to handle memory efficiently and safely.
+Reference counting - Tracking how many refernces point to an object
+Garbage Collection - The reference counting alone cannot handle circular references. 
+                     So, python has a cyclic garbage collector to handle it.
+                     Garbage collector destroys useless objects.
+Memory Allocation - While creating object in Python (eg: list, dict, or custom object), Python allocates memory for it in the heap
+'''
+import sys
+my_list = [1,2,3]
+print(sys.getrefcount(my_list))

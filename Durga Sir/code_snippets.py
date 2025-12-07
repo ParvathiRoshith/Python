@@ -302,9 +302,14 @@ class Test:
 '''
 Passing members of one class to another class - 
 
-1). Composition - by using class name/object we can access members of one class inside another
+1). Composition - by using class name/object we can access members of one class inside another class
+                - extends the function so as to just use existing function
 
-2). Inheritance - 
+2). Inheritance - one class inherts/gets variables, methods & constructors available from another class
+                - extends the function so as to extend the existing functionality
+--
+Aggregation(weak assosiation) v/s Composition(strong assosiation)
+eg:    dept,prof                       clg,dept
 '''
 
 #Composition
@@ -314,3 +319,66 @@ class Engine:
         self.b = 20
     def m1(self):
         print("Engine functionality")
+class Car:
+    def __init__(self):
+        self.engine = Engine()         #accessing using class name
+    def m2(self):
+        print(self.engine.a)
+        print(self.engine.b)
+        self.engine.m1()
+c = Car()
+c.m2()
+
+class Car:
+    def __init__(self,name,engine):
+        self.name = name
+        self.engine = engine
+    def display(self):
+        print(f'Name: {self.name}, Engine: {self.engine}')
+e=Engine()
+c1 = Car('Durga',e.b)     #acessing using object name
+c1.display()
+
+#Inheritance
+class Parent:
+    a = 10
+    def __init__(self):
+        self.b = 20
+    def m1(self):
+        print('Parent class')
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.d = 30
+    def m2(self):
+        print('Child class')
+c = Child()
+c.m1()
+c.m2()
+print(c.a,c.b,c.d)
+
+'''
+Types of Inheritance:
+i). Single - 1P to 1C
+ii). Multi level - 1P to 1C to 1CC
+iii). Hierarchical - 1P to 2C ; equalent to 2 single inheritance
+iv). Multiple - 2P to 1C
+v). Hybrid combination of above
+vi). Cyclic - one class to another in a cyclic way
+
+'''
+#Multi level inheritance
+class P:
+    pass
+class C(P):
+    pass
+class CC(C):
+    pass
+
+#Multiple inheritance
+class P1:
+    pass
+class P2:
+    pass
+class Child(P1,P2):
+    pass

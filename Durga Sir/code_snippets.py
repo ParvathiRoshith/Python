@@ -382,3 +382,5 @@ class P2:
     pass
 class Child(P1,P2):
     pass
+
+# POLYMORPHISM

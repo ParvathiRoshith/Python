@@ -160,3 +160,15 @@ def squareIt(x):
     return x**x             #x*x is correct
 assert squareIt(3)==9,"The square of 3 should be 9"     #assert condition,message
 
+# OBJECT ORIENTED PROGRAMMING SYSTEM
+
+'''
+Class
+Object --> physical existence of class, to create object we use reference variable
+Reference Variable --> variable used to refer object; eg: c=ClassName()
+Variables
+Method
+'''
+
+class ClassName:
+    '''documentation string'''

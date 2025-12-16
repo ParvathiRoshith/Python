@@ -404,21 +404,25 @@ class Child(Person):
         super().m1()
         super().m2()
         super().m3()
+    def variables(self):
+            print(super().genre)    #calling class variable from super class
+            print(self.name)    #calling class variable from super class
     def method(self):
         super().__init__()
         super().m1()
         super().m2()
         super().m3()
         print('Imported methods from super class')
-    def variables(self):
-            print(super().genre)    #calling class variable from super class
-            print(self.name)    #calling class variable from super class
-    @classmethod
-    def class_method(cls):
+    @classmethod                
+    def child_class_method(cls):
         super().m2()
         super().m3()
-        super(Child,cls).__init__(cls)
-        super(Child,cls).m1(cls)
-
+        super(Child,cls).__init__(cls)      #parent constructor inside child classmethod
+        super(Child,cls).m1(cls)            #parent instancemethod inside child classmethod
+    @staticmethod
+    def child_static_method():
+        super(Child,Child).m1()
+        super(Child,Child).m2()
+        super(Child,Child).m3()
 
 # POLYMORPHISM

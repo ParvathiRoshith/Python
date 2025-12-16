@@ -421,8 +421,13 @@ class Child(Person):
         super(Child,cls).m1(cls)            #parent instancemethod inside child classmethod
     @staticmethod
     def child_static_method():
-        super(Child,Child).m1()
+        super(Child,Child).m1()             #parent methods in child static method
         super(Child,Child).m2()
         super(Child,Child).m3()
+
+c=Child()
+c.m1()
+c.m2()
+c.m3()
 
 # POLYMORPHISM

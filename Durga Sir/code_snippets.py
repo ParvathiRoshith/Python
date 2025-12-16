@@ -383,4 +383,32 @@ class P2:
 class Child(P1,P2):
     pass
 
+#super() Method: It is a bulit-in method to call the super class constructor, variables and methods from child class.
+class Person:
+    genre = 'human'
+    def __init__(self,name):
+        self.name = name
+    def m1(self):
+        print('This is instance method') 
+    @classmethod
+    def m2(self):
+        print('This is class method')
+    @staticmethod
+    def m3(self):
+        print('This is static method')
+
+class Child(Person):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+    def method(self):
+        super().m1()
+        super().m2()
+        super().m3()
+        print('Imported methods from super class')
+    def variables(self):
+            print(super().genre)    #calling class variable from super class
+            print(self.name)    #calling class variable from super class
+
+
 # POLYMORPHISM

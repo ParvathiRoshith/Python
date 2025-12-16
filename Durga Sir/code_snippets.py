@@ -451,3 +451,45 @@ Based on provided value at runtime the type will be considered automatically.
     (ii) Constructor overriding -
 '''
 
+# Abstarct Method - declaring a method without knowing the implementation 
+
+from abc import *
+@abstractmethod
+def m1(self):
+    pass
+
+# Abstract Class - declaring class with partial implementation
+
+from abc import ABC
+class Test(ABC):
+    pass
+t = Test()
+
+# Interface - Abstract class containing only abstract methods
+
+from abc import *
+class DBinterface(ABC):
+    @abstractmethod
+    def connect(self):
+        pass
+    @abstractmethod
+    def disconnect(self):
+        pass
+
+#we cannot call 't = DBinterface()' since its abstract class with abstract method
+class Oracle(DBinterface):
+    def connect(self):
+        print('connecting to oracle db')
+    def disconnect(self):
+        print('disconnecting to oracle db')
+dbname='Oracle'
+classname=globals()[dbname]         #converts string into classname
+x = classname()
+x.connect()
+x.disconnect()
+
+# Public
+
+# Private
+
+# Private

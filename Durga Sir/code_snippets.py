@@ -430,4 +430,24 @@ c.m1()
 c.m2()
 c.m3()
 
-# POLYMORPHISM
+'''
+POLYMORPHISM
+**********
+Poly = many; Morph = Forms
+Same thing can be used for different purposes
+
+1). Duck Typing Philosophy: Python lang is dynamically typed. No need to mention type explicitly. 
+Based on provided value at runtime the type will be considered automatically.
+
+2). Overloading: 
+    (i) Operator overloading - using same operator(+/*) having diff purpose
+    (ii) Method overloading - 2 methods having same name but diff type of arguments [with default argument]
+    (iii) Constructor overloading - [with default argument]
+
+3). Overriding: All members of parent class are by default available to child class through inheritance.
+    If child class not satisfied with parent class implementation then child class is allowed to redefind
+    that method in the child class.
+    (i) Method overriding - 
+    (ii) Constructor overriding -
+'''
+

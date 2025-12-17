@@ -597,10 +597,46 @@ As a part of programming requirement, sometime threads are required to communica
 We can implement this in following ways:
 
 1) Event - one thread sends signal to an event and other thread waits for it.
-            -
+         - simplest communication mechanism
+         - set(), clear(), wait()
 
-2) Condition - 
+2) Condition - threads can wait & threads can be notified once condition happened or another thread
+             - [acquire(), release()]/with, wait(), notify()
+             - more advanced version of Event
 
-3) Queue - 
+3) Queue - most enhanced mechanism of inter communication
+         - it internally has Condition and that condition has Lock, hence its thread-safe
+         - q.put(), q.set
 
+'''
+event = threading.Event()
+def method():
+    for i in range(1,11,2):
+        event.set()
+        event.wait()
+        print(i)
+        event.clear()
+
+condition = threading.Condition()
+def method():
+    for i in range(1,11,2):
+        with condition:
+            while not True:
+                condition.wait()
+            print(i)
+            condition.notify()
+
+import queue
+q = queue.Queue()
+def method():
+    q.put()
+    for i in range(1,11,2):
+        q.get()
+
+'''
+3 types of Queue:
+
+a). FIFO Queue - by default
+b). LIFO Queue - removal/getting will happen in the reverse order of insert/putting
+c). Priority Queue - elements will be inserted in some priority order
 '''

@@ -514,7 +514,7 @@ Executing multiple tasks simultaneously.
 
 2). Multi threading - Executing multiple tasks simultaneously where each task is separate independent part of the same program.
                     - Each independent part is called as a thread
-
+                    - This can lead to data inconsistency also, hence we need synchronization
 
 '''
 import threading
@@ -526,4 +526,35 @@ t = threading.Thread(target=display)
 t.start()                           #child thread starts
 for i in range(10):
     print('Main Thread')
+t.ident                 #thread id number
+threading.current_thread().name()
+threading.active_count()        #count of active threads
+t.is_alive()        #checking whether a thread is still executing
+t.join()            #to make a thread wait, untill completion of another thread [t.join(seconds)]  
+
+# Daemon Thread - The thread that runs in the background. It provides support to the non daemon thread. eg Garbage Collector
+threading.current_thread().isDaemon()
+
+'''Synchronization / Race Condition - at a time only one Thread
+If multiple threads are executing simultaneously then there is a chance of data inconsistency problems.
+In synchronization the threads will be executed one by one.
+Main application areas are Online reservation system, fund transer from joint account
+
+In python we can apply synchronisation in 3 ways:
+1) Lock - lock object can be acquired only by one thread at a time
+        - even owner thread cannot acquire the lock multiple times
+        - most fundamental
+
+2) Rlock - rlock object can be acquired only by one thread at a time
+         - owner thread can acquire the lock multiple times
+         - suited for recursive and nested cells
+
+3) Semaphore - semaphore object can be acquired by limited number of threads by counter value
+             - limiting access to shared resources with limited capacity
+             - most advanced synchronisation mechanism
+             - we can call release() any number of times
+
+Bounded Semaphore where the number of release() should not exceed the number of acquire()
+
+'''
 

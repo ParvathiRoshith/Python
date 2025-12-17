@@ -488,8 +488,42 @@ x = classname()
 x.connect()
 x.disconnect()
 
-# Public
+# Public - bydefault attributes are public
+class Employee():
+    def __init__(self):
+        self.name = 'durga' 
 
-# Private
+# Protected - can be accessed from anywhere inside the class or subclass
+        self._age = 19
 
-# Private
+# Private - can be accessed only within the class
+        self.__head = 'software'
+t=Employee()
+print(t._Employee__head)
+
+
+# REGULAR EXPRESSION
+# representing a group of strings in a particular format
+
+
+# MULTI TASKING
+
+'''
+Executing multiple tasks simultaneously.
+1). Multi processing - Executing multiple tasks simultaneously where each task is separate independent process
+
+2). Multi threading - Executing multiple tasks simultaneously where each task is separate independent part of the same program.
+                    - Each independent part is called as a thread
+
+
+'''
+import threading
+def display():
+    for i in range(10):
+        print('Child Thread')
+
+t = threading.Thread(target=display)
+t.start()                           #child thread starts
+for i in range(10):
+    print('Main Thread')
+

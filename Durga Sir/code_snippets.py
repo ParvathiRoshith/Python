@@ -555,6 +555,39 @@ In python we can apply synchronisation in 3 ways:
              - we can call release() any number of times
 
 Bounded Semaphore where the number of release() should not exceed the number of acquire()
-
 '''
 
+import threading
+l = threading.Lock()
+def wish():
+    l.acquire()
+    print('name')
+    l.release()
+t = threading.Thread(target=wish)
+t.start()
+
+rl = threading.RLock()
+def factorial(n):
+    rl.acquire()
+    if n==0:
+        result = 1
+    else:
+        result = n * factorial(n-1)
+    rl.release()
+    return result
+t = threading.Thread(target=factorial, args=(5,))
+t.start()
+
+s = threading.Semaphore(2)
+def wish(name):
+    s.acquire()
+    print(f"his name is {name}")
+    s.release()
+t1 = threading.Thread(target=wish, args=("Dhoni",))
+t2 = threading.Thread(target=wish, args=("Durga",))
+t3 = threading.Thread(target=wish, args=("Yuvraj",))
+t1.start()
+t2.start()
+t3.start()
+
+#using with is the best option instead of everytime writing acquire and release

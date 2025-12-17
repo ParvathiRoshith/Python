@@ -591,3 +591,16 @@ t2.start()
 t3.start()
 
 #using with is the best option instead of everytime writing acquire and release
+
+'''Inter thread communication
+As a part of programming requirement, sometime threads are required to communicate with eachother.
+We can implement this in following ways:
+
+1) Event - one thread sends signal to an event and other thread waits for it.
+            -
+
+2) Condition - 
+
+3) Queue - 
+
+'''

@@ -60,11 +60,11 @@ relationship() is used to define relationships between ORM models. It connects P
 select (default): Load on access (lazy loading).  
 joined: Load using JOIN (eager loading).  
 subquery: Load with subquery (eager loading).  
-dynamic: Returns a query object instead of a list.
+dynamic: Returns a query object instead of a list.  
 **cascade:** Defines behavior on delete/update (all, delete-orphan). Common options:  
 'all' → all operations cascade  
 'delete' → delete related objects  
-'delete-orphan' → delete child if unlinked
+'delete-orphan' → delete child if unlinked  
 **uselist:** Used for one-to-one relationships.
 
 ```

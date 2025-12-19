@@ -69,11 +69,32 @@ dynamic: Returns a query object instead of a list.
 
 ```
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    orders = db.relationship('Order', back_populates='user')
+    __tablename__ = "user"
 
-class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User', back_populates='orders')
+    name = db.Column(db.String(100), nullable=False)
+
+    profile = db.relationship(
+        "Profile",
+        back_populates="user",
+        uselist=False,
+        cascade="all, delete"
+    )
+
+    posts = db.relationship(
+        "Post",
+        back_populates="user",
+        cascade="all, delete",
+        lazy = "select"
+    )
 ```
+
+While developing API, the specification of the API or diff way of passing the parameter
+path variable(http://127.0.0.1:5000/users/users_by_ids/4)
+query parameter(http://127.0.0.1:5000/users/users_by_ids?id=2&id=3&name=Parvathi)
+
+# native query
+
+# headers
+
+# exception

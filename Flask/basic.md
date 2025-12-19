@@ -6,7 +6,7 @@ Flask is a micro web framework written in Python. It is called “micro” becau
 
 Flask is widely used to build RESTful APIs. Supports HTTP methods: GET, POST, PUT, DELETE, PATCH. APIs usually return JSON responses. Easy integration with authentication, database, and ORMs. Can use extensions like Flask-RESTful, Flask-JWT, and Flask-CORS.
 
-REST API stands for Representational State Transfer Application Programming Interface. It is a way for two systems to communicate over the internet, usually using HTTP. Whereas, FastAPI is a Python web framework used to build REST APIs quickly and efficiently.
+REST API stands for Representational State Transfer Application Programming Interface. It is a way for two systems to communicate over the internet, usually using HTTP. Whereas, FastAPI is a Python web framework used to build REST APIs quickly and efficiently.  
 👉 REST API = concept / design style
 👉 FastAPI = tool/framework to create REST APIs
 

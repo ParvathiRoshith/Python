@@ -7,7 +7,7 @@ Flask is a micro web framework written in Python. It is called “micro” becau
 Flask is widely used to build RESTful APIs. Supports HTTP methods: GET, POST, PUT, DELETE, PATCH. APIs usually return JSON responses. Easy integration with authentication, database, and ORMs. Can use extensions like Flask-RESTful, Flask-JWT, and Flask-CORS.
 
 REST API stands for Representational State Transfer Application Programming Interface. It is a way for two systems to communicate over the internet, usually using HTTP. Whereas, FastAPI is a Python web framework used to build REST APIs quickly and efficiently.  
-👉 REST API = concept / design style
+👉 REST API = concept / design style  
 👉 FastAPI = tool/framework to create REST APIs
 
 # Folder Structure
@@ -31,10 +31,42 @@ project/
 │── requirements.txt
 ```
 
-app/: Core application logic.
-routes.py: API endpoints.
-models.py: Database models.
-templates/: HTML files.
-static/: CSS, JS, images.
-run.py: Application entry point.
+app/: Core application logic.  
+routes.py: API endpoints.  
+models.py: Database models.  
+templates/: HTML files.  
+static/: CSS, JS, images.  
+run.py: Application entry point.  
+services/: business logic from API routes
 
+# ORM (Object Relational Mapping)
+
+ORM is a technique that maps database tables to Python classes. Allows developers to interact with the database using objects instead of SQL queries. Improves code readability, maintainability, and productivity.  
+Each class → table  
+object → row  
+attribute → column  
+
+## ORM in Flask
+
+Commonly used ORM is SQLAlchemy. Flask integrates ORM using Flask-SQLAlchemy. Handles CRUD operations, relationships, and migrations. Provides database abstraction, making apps database-agnostic. Supports relationships (one-to-one, one-to-many, many-to-many)
+
+### SQLAlchemy.relationship()
+
+relationship() is used to define relationships between ORM models. It connects Python objects, not database columns directly. Used along with ForeignKey to establish table relationships. Supports lazy loading and bidirectional access.
+
+#### Key Parameters  
+back_populates / backref: Enables two-way relationship.  
+lazy: Controls how related data is loaded (select, joined, subquery).  
+cascade: Defines behavior on delete/update (all, delete-orphan).  
+uselist: Used for one-to-one relationships.
+
+'''
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    orders = db.relationship('Order', back_populates='user')
+
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User', back_populates='orders')
+'''

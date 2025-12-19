@@ -55,12 +55,19 @@ Commonly used ORM is SQLAlchemy. Flask integrates ORM using Flask-SQLAlchemy. Ha
 relationship() is used to define relationships between ORM models. It connects Python objects, not database columns directly. Used along with ForeignKey to establish table relationships. Supports lazy loading and bidirectional access.
 
 #### Key Parameters  
-back_populates / backref: Enables two-way relationship.  
-lazy: Controls how related data is loaded (select, joined, subquery).  
-cascade: Defines behavior on delete/update (all, delete-orphan).  
-uselist: Used for one-to-one relationships.
+**back_populates / backref:** Enables two-way relationship.  
+**lazy:** Controls how related data is loaded (select, joined, subquery). Controls how related objects are loaded:
+select (default): Load on access (lazy loading).  
+joined: Load using JOIN (eager loading).  
+subquery: Load with subquery (eager loading).  
+dynamic: Returns a query object instead of a list.
+**cascade:** Defines behavior on delete/update (all, delete-orphan). Common options:  
+'all' → all operations cascade  
+'delete' → delete related objects  
+'delete-orphan' → delete child if unlinked
+**uselist:** Used for one-to-one relationships.
 
-'''
+```
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     orders = db.relationship('Order', back_populates='user')
@@ -69,4 +76,4 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User', back_populates='orders')
-'''
+```

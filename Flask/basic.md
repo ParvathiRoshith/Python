@@ -12,6 +12,7 @@ REST API stands for Representational State Transfer Application Programming Inte
 
 # Folder Structure
 
+'''
 project/
 │── app/
 │   ├── __init__.py
@@ -28,6 +29,7 @@ project/
 │── static/
 │── run.py
 │── requirements.txt
+''''
 
 app/: Core application logic.
 routes.py: API endpoints.

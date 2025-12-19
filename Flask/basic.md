@@ -94,8 +94,8 @@ path variable (http://127.0.0.1:5000/users/users_by_ids/4)
 query parameter (http://127.0.0.1:5000/users/users_by_ids?id=2&id=3&name=Parvathi)  
 
 client --> satillet --> DNS --> Flask,Server  
-client can be Postman, destination ASDA, brower, etc  
-Flask app is the source
+client can be Postman, destination ASDA, brower, etc  []import request?]
+Flask app is the source [flask.request]
 
 # native query
 

@@ -60,7 +60,7 @@ Logical - and, or, not
 Bitwise - &, |, ^, ~, <<, >>
 Assignment - =, +=, -=, *=, ...
 Special operator - 
-    Identity operator : is, is not
+    Identity operator : is, is not    ['is' operation compares addresses while '==' operator compares contents]
     Membership operator : in, not in
 '''
 a='durga'

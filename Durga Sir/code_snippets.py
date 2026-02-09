@@ -55,6 +55,7 @@ Arithmetic -
     // : floor division, results in quotient of the division (if arguments are float value then results in float else int type)
     ** : power / exponent
 Relational - >, <, >=, <=, ==, !=
+Equality - ==, !=
 Logical - and, or, not
 Bitwise - &, |, ^, ~, <<, >>
 Assignment - =, +=, -=, *=, ...

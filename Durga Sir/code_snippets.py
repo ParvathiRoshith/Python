@@ -303,11 +303,11 @@ class Test:
 '''
 Passing members of one class to another class - 
 
-1). Composition - by using class name/object we can access members of one class inside another class
-                - extends the function so as to just use existing function
+1). Composition (Has-A Relation) - by using class name/object we can access members of one class inside another class
+                                 - extends the function so as to just use existing function
 
-2). Inheritance - one class inherts/gets variables, methods & constructors available from another class
-                - extends the function so as to extend the existing functionality
+2). Inheritance (Is-A Relation) - one class inherts/gets variables, methods & constructors available from another class
+                                - extends the function so as to extend the existing functionality
 --
 Aggregation(weak assosiation) v/s Composition(strong assosiation)
 eg:    dept,prof                       clg,dept

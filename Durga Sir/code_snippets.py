@@ -161,7 +161,7 @@ def squareIt(x):
     return x**x             #x*x is correct
 assert squareIt(3)==9,"The square of 3 should be 9"     #assert condition,message
 
-# OBJECT ORIENTED PROGRAMMING SYSTEM
+# OBJECT ORIENTED PROGRAMMING SYSTEM - Class, Object, Inheritance, Polymorphisum, Abstraction, Encapsulation
 
 '''
 Class [like the blue print to create something/an object]
@@ -268,11 +268,11 @@ e.setName('Durga')
 print(e.getName())
 
 '''Inner class
-Without existing of 1 object if there's no chance of existing another typpe of object then we go for ineer classes.
-To acess method inside inner class - Outer().Inner().m1()
+Without existing of 1 object if there's no chance of existing another typpe of object then we go for inner classes.
+To access method inside inner class - Outer().Inner().m1()
 '''
 
-# Reference counting & Garbage collection
+# Reference counting & Garbage collection 
 '''
 Q). How Python manages memory?
 

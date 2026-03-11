@@ -144,7 +144,12 @@ print(s.count('Python'))    #count(string,begin,end)
 print(s.replace('very easy','easy'))    #replace(oldstring,newstring)
 
 # EXCEPTION HANDLING - handle runtime errors
-
+try:
+    print(10/0)
+except:
+    print("ZeroDivisionError")
+finally:
+    print("finally")
 
 
 # LOGGING - that stores complete data flow & exceptions info in a file

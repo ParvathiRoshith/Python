@@ -316,6 +316,8 @@ Passing members of one class to another class -
 --
 Aggregation(weak assosiation) v/s Composition(strong assosiation)
 eg:    dept,prof                       clg,dept
+
+Aggregation: Without existing of container object if there is a chance of the existance of contained object then container and contained objects are weakly associated.
 '''
 
 #Composition

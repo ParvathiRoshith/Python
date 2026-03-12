@@ -496,15 +496,21 @@ x = classname()
 x.connect()
 x.disconnect()
 
-# Public - bydefault attributes are public
+''' Access Modifiers
+Access modifiers in Python control which parts of a class can be accessed from outside the class, from within the class, or by subclasses. 
+They help keep data and methods safe and organized. 
+Types of Access Modifiers in Python - public, private and protected
+'''
+
+# Public - bydefault attributes are public. Can be accessed from anywhere in the program
 class Employee():
     def __init__(self):
         self.name = 'durga' 
 
-# Protected - can be accessed from anywhere inside the class or subclass
+# Protected - can be accessed from anywhere inside the class or subclass not be accessed outside the class
         self._age = 19
 
-# Private - can be accessed only within the class
+# Private - can be accessed only within the class. Direct access from outside will raise AttributeError
         self.__head = 'software'
 t=Employee()
 print(t._Employee__head)

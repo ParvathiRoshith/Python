@@ -102,3 +102,16 @@ Flask app is the source [flask.request]
 # headers
 
 # exception
+
+api
+2 flask app - creator import Flask, reciver import Request
+min requiremnt for application - identifiers, start date, end date. format in json,
+5-6 apps back which all apis are there (list of api: /login, /rest)
+for each api's what is in the min requirements like username, password, id, phonenumber, otp
+PUT, POST, GET
+how can i pass parameters to an api call and process using flask
+http status code- rough idea and rang of status code 
+orm, sql alchemy lazy loading, cascading
+JPA repository queries like findbyid, native queires 
+exception handling using flask
+proj sturcture for prod grade application and how to deply in production (methods)

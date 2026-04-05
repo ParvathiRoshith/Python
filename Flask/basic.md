@@ -109,7 +109,7 @@ min requiremnt for application - identifiers, start date, end date. format in js
 5-6 apps back which all apis are there (list of api: /login, /rest)
 for each api's what is in the min requirements like username, password, id, phonenumber, otp
 PUT, POST, GET
-how can i pass parameters to an api call and process using flask
+how can i pass parameters to an api call and process using flask - query parameter, path variable, post
 http status code- rough idea and rang of status code 
 orm, sql alchemy lazy loading, cascading
 JPA repository queries like findbyid, native queires 

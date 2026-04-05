@@ -143,14 +143,28 @@ print(s.rfind('r'))    #finding 1st occurance from backward direction (ve'r'y)
 print(s.count('Python'))    #count(string,begin,end)
 print(s.replace('very easy','easy'))    #replace(oldstring,newstring)
 
+.
+.
+.
+
 # EXCEPTION HANDLING - handle runtime errors
 try:
     print(10/0)
 except:
     print("ZeroDivisionError")
-finally:
+else:                    #executed only if there are no exception thrown
+    pass
+finally:                    # always runs
     print("finally")
 
+#custom exception
+class InvalidAgeError(Exception):        #by inheriting from Exception parent class
+    pass
+def check_age(age):
+    if age < 18:
+        raise InvalidAgeError("Age must be at least 18")
+    return "Eligible"
+print(check_age(16))
 
 # LOGGING - that stores complete data flow & exceptions info in a file
 
@@ -161,6 +175,7 @@ msg='cannot divie by zero'
 logging.exception(msg)
 
 # DEBUGGING - identifying & fixing bugs. Used to alert programmer
+asert 
 
 def squareIt(x):
     return x**x             #x*x is correct

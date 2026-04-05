@@ -103,7 +103,7 @@ Flask app is the source [flask.request]
 
 # exception
 
-api
+api  
 2 flask app - creator import Flask, reciver import Request
 min requiremnt for application - identifiers, start date, end date. format in json,
 5-6 apps back which all apis are there (list of api: /login, /rest)

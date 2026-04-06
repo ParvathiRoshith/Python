@@ -565,6 +565,10 @@ t.join()            #to make a thread wait, untill completion of another thread 
 threading.current_thread().isDaemon()
 
 '''Synchronization / Race Condition - at a time only one Thread
+A race condition occurs when two or more processes or threads access and modify the same data at the same time, and the final result depends on the order in which 
+they run. Without proper coordination, this can lead to incorrect or unpredictable results. 
+For example, if two people update the same bank account simultaneously without checking each other’s changes, the final balance may be wrong.
+
 If multiple threads are executing simultaneously then there is a chance of data inconsistency problems.
 In synchronization the threads will be executed one by one.
 Main application areas are Online reservation system, fund transer from joint account

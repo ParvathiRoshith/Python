@@ -1,0 +1,25 @@
+MACHINE LEARNING
+
+1) Supervised Learning - Regression Algorithm, Classification Algorithm
+	Regression Algorithm: Target is continuous variable
+		*cost function = mean squared error (convex curve)
+		*Gradient descent is the way to minimise cost function i.e. finding the best fit model for a given dataset
+		a) Linear regression
+		b) Multiple regression
+		c) Polynomial regression
+		*Regularisated linear regression
+	Classification Algorithm: Target is categorical variable
+		a) Logistic regression
+		*loss function = maximum likelihood (convex curve)
+		*here insted of cost funct. we use loss funct. since cost function here will be non-convex
+		*Gradient descent
+		*Regularisated logistic regression
+	
+2) Unsupervised Learning - Cluster Algorithm, Anomaly Detection, Dimensionality Reduction
+
+Underfitting - High bias
+Overfitting - High variance - to avoid this use take big training dataset, feature selection, Regularisation(only take relevent of independet variables)
+	Regularisation (=lamda):
+	- if lamda>0; model overfits
+	- if lamda<10^10; model underfits
+	

@@ -1,0 +1,140 @@
+Time: O(log n)
+Space: O(1)
+Simple and short
+Accepted by LeetCode and interviewers
+______________________________________________
+
+Data Structures You Might Hear Alongside Hash Tables (faster for direct lookup than lists or trees for simple key-value mapping)
+Array/List → Sequential storage
+Linked List → Items point to the next item
+Stack/Queue → LIFO / FIFO order
+Tree / Binary Tree / Binary Search Tree → Hierarchical structure
+Graph → Nodes connected by edges
+
+
+Phase 1:
+
+Arrays & Hashing [Patterns: hash maps, frequency counting]
+Two Pointers [left/right pointers, sorted arrays]
+Stack [monotonic stack, tracking min/max]
+
+Phase 2:
+
+Sliding Window [dynamic window, frequency maps]
+Binary Search [left/right bounds, mid logic]
+Linked List [fast & slow pointers]
+
+Phase 3:
+
+Trees [DFS, recursion, postorder traversal]
+Heaps / Priority Queue []
+Graphs [BFS, DFS, visited set]
+Basic DP [caching]
+
+
+The 30–30–10 rule
+*******************
+For each problem:
+1) 30 min try on your own
+2) 30 min refine / fix / optimize
+3) 10 min summarize pattern in your own words 
+
+Example summary:
+“Sliding window = expand right pointer, shrink left when condition breaks.”
+This summary is more valuable than the code.
+
+Pattern recognition test
+**************************
+After solving, ask:
+If numbers → prefix sum / sliding window?
+If “top K” → heap?
+If “subarray/substring” → window?
+If tree → DFS/BFS?
+
+_________________________________________________________________________________________________________________
+
+HASHING :-
+
+Two Sum
+Contains Duplicate
+Valid Anagram
+Group Anagrams
+Top K Frequent Elements
+
+Summary: Array, Hash Table, Sorting, String
+store complements in dict/set/list while iterating, update it, and use lookups to enforce constraints
+Hashing = computer science technique that converts data into a fixed-size number to allow fast lookup and organizing 
+eg. hash("hello") = -879239847239847
+
+
+TWO POINTERS :-
+
+Valid Palindrome
+Two Sum II – Input Array Is Sorted
+3Sum
+Container With Most Water
+
+Summary:
+
+
+STACK :-
+
+Valid Parentheses
+Min Stack
+Daily Temperatures
+Evaluate Reverse Polish Notation
+
+
+SLIDING WINDOW :-
+
+Best Time to Buy and Sell Stock
+Longest Substring Without Repeating Characters
+Longest Repeating Character Replacement
+Permutation in String
+
+
+BINARY SEARCH :-
+
+Binary Search
+Search in Rotated Sorted Array
+Find Minimum in Rotated Sorted Array
+Koko Eating Bananas
+
+
+LINKED LIST :-
+
+Reverse Linked List
+Merge Two Sorted Lists
+Reorder List
+Linked List Cycle
+
+
+BINARY TREES :-
+
+Invert Binary Tree
+Maximum Depth of Binary Tree
+Diameter of Binary Tree
+Balanced Binary Tree
+Lowest Common Ancestor of a Binary Tree
+
+
+HEAPS / PRIORITY QUEUE :-
+
+Kth Largest Element in an Array
+Task Scheduler
+Merge K Sorted Lists
+
+
+GRAPHS (Basics) :-
+
+Number of Islands
+Clone Graph
+Course Schedule
+
+
+DYNAMIC PRPGRAMMING (start small) :-
+
+Climbing Stairs
+House Robber
+Coin Change
+Longest Increasing Subsequence
